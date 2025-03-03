@@ -6,19 +6,9 @@
   />
 </template>
 
-<script>
+<script setup lang="ts">
 import Start from "./sections/StartSection.vue";
 import data from "@/data/data.json";
-
-export default {
-  name: "App",
-  components: {
-    Start,
-  },
-  data() {
-    return { data };
-  },
-};
 </script>
 
 <style>
