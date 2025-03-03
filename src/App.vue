@@ -1,14 +1,22 @@
 <template>
-  <Start />
+  <Start
+    :title="data.title"
+    :description="data.description"
+    :start="data.start"
+  />
 </template>
 
 <script>
-import Start from "./components/Start.vue";
+import Start from "./sections/StartSection.vue";
+import data from "@/data/data.json";
 
 export default {
   name: "App",
   components: {
     Start,
+  },
+  data() {
+    return { data };
   },
 };
 </script>
@@ -27,5 +35,9 @@ body {
   height: 100%;
   width: 100vw;
   overflow-y: auto;
+}
+
+h1 {
+  margin: 0px;
 }
 </style>
