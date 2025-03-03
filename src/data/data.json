@@ -1,0 +1,16 @@
+{
+  "name": "Rodrigo Santos",
+  "description": "Full Stack Web Developer",
+  "socials": {
+    "twitter": {
+      "name": "twitter",
+      "link": "http://twitter.com",
+      "icon": "twitter"
+    },
+    "instagram": {
+      "name": "instagram",
+      "link": "http://instagram.com",
+      "icon": "instagram"
+    }
+  }
+}
