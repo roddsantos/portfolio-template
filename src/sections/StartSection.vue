@@ -1,33 +1,19 @@
 <template>
   <section
     id="start"
-    :class="['start', props.start?.align || 'left']"
-    :style="{ backgroundColor: props.start?.background || colors.background }"
+    :class="['start', start?.align || 'left']"
+    :style="{ backgroundColor: start?.background || styles.default.background }"
   >
-    <h1>{{ props.title }}</h1>
-    <h2>{{ props.description }}</h2>
+    <h1>{{ title }}</h1>
+    <h2>{{ description }}</h2>
+    <SocialsComponent :socials="socials" />
   </section>
 </template>
 
 <script setup lang="ts">
-import type { PropType } from "vue";
-import { StartSectionType } from "@/types/data";
-import { useStylesStore } from "@/store/styles";
-
-const { colors } = useStylesStore();
-const props = defineProps({
-  title: {
-    type: String,
-    default: "",
-  },
-  description: {
-    type: String,
-    default: "",
-  },
-  start: {
-    type: Object as PropType<StartSectionType>,
-  },
-});
+import SocialsComponent from "@/components/SocialsComponent.vue";
+import { useDataStore } from "@/store/data";
+const { title, description, socials, start, styles } = useDataStore();
 </script>
 
 <style scoped>

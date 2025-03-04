@@ -1,24 +1,17 @@
 <template>
-  <Start
-    :title="typedData.title"
-    :description="typedData.description"
-    :start="typedData.start"
-  />
+  <Start />
 </template>
 
 <script setup lang="ts">
 import Start from "./sections/StartSection.vue";
-import { DATA } from "@/store/data";
-import { DataType } from "@/types/data";
-import { useStylesStore } from "@/store/styles";
 import { useGeneralStore } from "@/store/general";
+import { useDataStore } from "@/store/data";
 
-const typedData = DATA as DataType;
-const { defineColors } = useStylesStore();
 const { defineMode } = useGeneralStore();
+const { defineData } = useDataStore();
 
 defineMode();
-defineColors(typedData.styles);
+defineData();
 </script>
 
 <style>

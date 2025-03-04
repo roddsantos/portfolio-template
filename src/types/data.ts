@@ -1,9 +1,14 @@
-export type StylesType = {
+export type ColorsType = {
   primary: string;
   secondary: string;
   accent: string;
   background: string;
   text: string;
+};
+
+export type StylesType = {
+  theme: "default" | "custom";
+  colors: ColorsType;
 };
 
 export type StartSectionType = {
