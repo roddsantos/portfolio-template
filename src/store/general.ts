@@ -4,9 +4,13 @@ import { ref } from "vue";
 export const useGeneralStore = defineStore("general", () => {
   const darkMode = ref<boolean>(false);
 
-  if (localStorage.getItem("darkMode")) {
-    darkMode.value = JSON.parse(localStorage.getItem("darkMode") || "false");
-  }
+  const defineMode = () => {
+    if (localStorage.getItem("darkMode")) {
+      darkMode.value = JSON.parse(localStorage.getItem("darkMode") || "false");
+    } else {
+      localStorage.setItem("darkMode", "false");
+    }
+  };
 
   const toggleDarkMode = () => {
     darkMode.value = !darkMode.value;
@@ -15,6 +19,7 @@ export const useGeneralStore = defineStore("general", () => {
 
   return {
     darkMode,
+    defineMode,
     toggleDarkMode,
   };
 });

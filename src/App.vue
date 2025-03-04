@@ -8,13 +8,17 @@
 
 <script setup lang="ts">
 import Start from "./sections/StartSection.vue";
-import { DATA } from "../data";
+import { DATA } from "@/store/data";
 import { DataType } from "@/types/data";
-import { useGeneralStore } from "@/store/styles";
+import { useStylesStore } from "@/store/styles";
+import { useGeneralStore } from "@/store/general";
 
 const typedData = DATA as DataType;
-const { setColors } = useGeneralStore();
-setColors(typedData.styles);
+const { defineColors } = useStylesStore();
+const { defineMode } = useGeneralStore();
+
+defineMode();
+defineColors(typedData.styles);
 </script>
 
 <style>

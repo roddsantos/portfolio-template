@@ -12,9 +12,11 @@ export type StartSectionType = {
 };
 
 export type SocialType = {
-  name: string;
-  link: string;
-  icon: string;
+  [key: string]: {
+    name: string;
+    link: string;
+    icon: string;
+  };
 };
 
 export type DataType = {
@@ -22,7 +24,5 @@ export type DataType = {
   description: string;
   start: StartSectionType;
   styles: StylesType;
-  socials: {
-    [key: string]: SocialType;
-  };
+  socials: SocialType;
 };

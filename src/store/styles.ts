@@ -2,7 +2,7 @@ import { StylesType } from "@/types/data";
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
-export const useGeneralStore = defineStore("styles", () => {
+export const useStylesStore = defineStore("styles", () => {
   const colors = ref<StylesType>({
     primary: "#333333",
     secondary: "#dddddd",
@@ -11,7 +11,7 @@ export const useGeneralStore = defineStore("styles", () => {
     text: "#000000",
   });
 
-  const setColors = (colorsData: StylesType) => {
+  const defineColors = (colorsData: StylesType) => {
     document.documentElement.style.setProperty("--primary", colorsData.primary);
     document.documentElement.style.setProperty(
       "--secondary",
@@ -28,6 +28,6 @@ export const useGeneralStore = defineStore("styles", () => {
 
   return {
     colors,
-    setColors,
+    defineColors,
   };
 });

@@ -12,10 +12,9 @@
 <script setup lang="ts">
 import type { PropType } from "vue";
 import { StartSectionType } from "@/types/data";
-import { useGeneralStore } from "@/store/styles";
+import { useStylesStore } from "@/store/styles";
 
-const { colors } = useGeneralStore();
-console.log(colors);
+const { colors } = useStylesStore();
 const props = defineProps({
   title: {
     type: String,
