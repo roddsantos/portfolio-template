@@ -1,14 +1,20 @@
 <template>
   <Start
-    :title="data.title"
-    :description="data.description"
-    :start="data.start"
+    :title="typedData.title"
+    :description="typedData.description"
+    :start="typedData.start"
   />
 </template>
 
 <script setup lang="ts">
 import Start from "./sections/StartSection.vue";
-import data from "@/data/data.json";
+import { DATA } from "../data";
+import { DataType } from "@/types/data";
+import { useGeneralStore } from "@/store/styles";
+
+const typedData = DATA as DataType;
+const { setColors } = useGeneralStore();
+setColors(typedData.styles);
 </script>
 
 <style>
@@ -28,6 +34,26 @@ body {
 }
 
 h1 {
+  font-size: 4rem;
   margin: 0px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin: 0px;
+}
+
+h3 {
+  font-size: 2rem;
+  margin: 0px;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin: 0px;
+}
+
+section {
+  padding: 2rem 10vw;
 }
 </style>

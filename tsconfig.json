@@ -22,6 +22,7 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
+    "src/**/*.json",
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"

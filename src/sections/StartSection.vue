@@ -1,15 +1,21 @@
 <template>
-  <div
+  <section
     id="start"
     :class="['start', props.start?.align || 'left']"
-    :style="{ backgroundColor: props.start?.background || '#ffffff' }"
+    :style="{ backgroundColor: props.start?.background || colors.background }"
   >
     <h1>{{ props.title }}</h1>
     <h2>{{ props.description }}</h2>
-  </div>
+  </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type { PropType } from "vue";
+import { StartSectionType } from "@/types/data";
+import { useGeneralStore } from "@/store/styles";
+
+const { colors } = useGeneralStore();
+console.log(colors);
 const props = defineProps({
   title: {
     type: String,
@@ -20,7 +26,7 @@ const props = defineProps({
     default: "",
   },
   start: {
-    type: Object,
+    type: Object as PropType<StartSectionType>,
   },
 });
 </script>
