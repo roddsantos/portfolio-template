@@ -2,7 +2,7 @@
   <section
     id="start"
     :class="['start', start?.align || 'left']"
-    :style="{ backgroundColor: start?.background || styles.default.background }"
+    :style="{ backgroundColor: start?.background || styles.colors.background }"
   >
     <h1>{{ title }}</h1>
     <h2>{{ description }}</h2>

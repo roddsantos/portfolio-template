@@ -1,8 +1,15 @@
 <template>
   <div class="container">
-    <div v-for="social of socials" :key="social.name">
-      <v-icon icon="{{ '$'+social.icon }}"></v-icon>
-    </div>
+    <a
+      v-for="social of socials"
+      :key="social.name"
+      :href="social.link"
+      target="_blank"
+    >
+      <button class="social">
+        <i :class="['icon', social.class]"></i>
+      </button>
+    </a>
   </div>
 </template>
 
@@ -20,7 +27,6 @@ const props = defineProps({
 const socials = props.socials
   ? Object.keys(props.socials).map((socialName) => props.socials[socialName])
   : [];
-console.log(socials, props.socials);
 </script>
 
 <style scoped>
@@ -28,7 +34,25 @@ console.log(socials, props.socials);
   display: flex;
   margin-top: 2rem;
   height: 60px;
-  padding: 1rem 2rem;
+  width: max-content;
+  & a {
+    text-decoration: none;
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  margin-right: 1rem;
+  border: 2px solid var(--primary);
   background-color: var(--secondary);
+  & .icon {
+    color: var(--text);
+    font-size: 3rem;
+  }
 }
 </style>

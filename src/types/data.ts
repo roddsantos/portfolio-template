@@ -20,7 +20,7 @@ export type SocialType = {
   [key: string]: {
     name: string;
     link: string;
-    icon: string;
+    class: string;
   };
 };
 
