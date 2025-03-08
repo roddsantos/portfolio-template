@@ -29,7 +29,8 @@ export type SectionTypeField = "text" | "image" | "grid" | "list";
 export type GridItemType = {
   type: "icon" | "image";
   class: string;
-  sources: string;
+  source: string;
+  title: string;
 };
 
 export type SectionType = {

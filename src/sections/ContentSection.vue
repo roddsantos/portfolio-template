@@ -12,6 +12,7 @@
         :class="['section', section.type]"
       >
         <h3>{{ section.title }}</h3>
+        <SectionItemComponent :section="section" />
       </div>
     </div>
   </section>
@@ -19,6 +20,7 @@
 
 <script setup lang="ts">
 import { useDataStore } from "@/store/data";
+import SectionItemComponent from "@/components/SectionItemComponent.vue";
 const { sections } = useDataStore();
 </script>
 
