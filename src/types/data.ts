@@ -24,10 +24,26 @@ export type SocialType = {
   };
 };
 
+export type SectionTypeField = "text" | "image" | "grid" | "list";
+
+export type GridItemType = {
+  type: "icon" | "image";
+  class: string;
+  sources: string;
+};
+
+export type SectionType = {
+  title: string;
+  type: "text" | "image" | "grid" | "list";
+  style: "transparent" | "filled" | "outlined";
+  content: string | string[] | GridItemType[];
+};
+
 export type DataType = {
   title: string;
   description: string;
   start: StartSectionType;
   styles: StylesType;
   socials: SocialType;
+  sections: SectionType[][];
 };

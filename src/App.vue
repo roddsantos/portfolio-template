@@ -1,9 +1,11 @@
 <template>
   <Start />
+  <ContentSection />
 </template>
 
 <script setup lang="ts">
-import Start from "./sections/StartSection.vue";
+import Start from "@/sections/StartSection.vue";
+import ContentSection from "@/sections/ContentSection.vue";
 import { useGeneralStore } from "@/store/general";
 import { useDataStore } from "@/store/data";
 
