@@ -2,6 +2,7 @@
 import { ref, computed } from "vue";
 import PortfolioPage from "./pages/PortfolioPage.vue";
 import CreatorPage from "./pages/CreatorPage.vue";
+import NotFoundPage from "./pages/NotFoundPage.vue";
 
 const routes = {
   "/": PortfolioPage,
@@ -15,7 +16,7 @@ window.addEventListener("hashchange", () => {
 });
 
 const currentView = computed(() => {
-  return routes[window.location.pathname];
+  return routes[window.location.pathname] || NotFoundPage;
 });
 </script>
 
