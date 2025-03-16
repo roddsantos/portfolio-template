@@ -1,5 +1,9 @@
-import { StartSectionType } from "./../types/data";
-import { SocialType, StylesType } from "@/types/data";
+import {
+  SocialType,
+  StylesType,
+  SectionType,
+  StartSectionType,
+} from "@/types/data";
 import dataJson from "../../data.json";
 import { defineStore } from "pinia";
 import { ref } from "vue";
@@ -19,6 +23,7 @@ export const useDataStore = defineStore("data", () => {
       text: "#000000",
     },
   });
+  const sections = ref<SectionType[][]>([]);
 
   const defineData = () => {
     title.value = (dataJson.title as string) || "";
@@ -34,6 +39,7 @@ export const useDataStore = defineStore("data", () => {
       align: "left",
     };
     styles.value = (dataJson.styles as StylesType) || styles.value;
+    sections.value = (dataJson.sections as SectionType[][]) || [];
 
     document.documentElement.style.setProperty(
       "--primary",
@@ -64,5 +70,6 @@ export const useDataStore = defineStore("data", () => {
     socials,
     styles,
     start,
+    sections,
   };
 });
