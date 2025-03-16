@@ -1,13 +1,11 @@
 <template>
-  <Start />
-  <ContentSection />
+  <AppRouter />
 </template>
 
 <script setup lang="ts">
-import Start from "@/sections/StartSection.vue";
-import ContentSection from "@/sections/ContentSection.vue";
 import { useGeneralStore } from "@/store/general";
 import { useDataStore } from "@/store/data";
+import AppRouter from "./app-router.vue";
 
 const { defineMode } = useGeneralStore();
 const { defineData } = useDataStore();
