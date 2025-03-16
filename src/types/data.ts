@@ -1,3 +1,5 @@
+import { CSSProperties, HTMLAttributes } from "vue";
+
 export type ColorsType = {
   primary: string;
   secondary: string;
@@ -33,11 +35,26 @@ export type GridItemType = {
   title: string;
 };
 
+type StyleValue =
+  | false
+  | null
+  | undefined
+  | string
+  | CSSProperties
+  | Array<StyleValue>;
+
+// export type SectionOptionsType = Partial<CSSStyleDeclaration> {
+//   orientation: "left" | "right" | "center";
+// };
+
 export type SectionType = {
   title: string;
   type: "text" | "image" | "grid" | "list";
   style: "transparent" | "filled" | "outlined";
   content: string | string[] | GridItemType[];
+  options: {
+    backgroundColor: string;
+  };
 };
 
 export type DataType = {

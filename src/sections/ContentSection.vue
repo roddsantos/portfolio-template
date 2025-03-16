@@ -11,7 +11,6 @@
         :key="'row-' + indexSection"
         :class="['section', section.type]"
       >
-        <h3>{{ section.title }}</h3>
         <SectionItemComponent :section="section" />
       </div>
     </div>
@@ -42,8 +41,5 @@ const { sections } = useDataStore();
   color: var(--text);
   min-height: 60px;
   min-width: 100%;
-  & h3 {
-    margin: 1rem;
-  }
 }
 </style>
